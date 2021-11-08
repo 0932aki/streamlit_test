@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 
-st.title('健康チェック!')
+st.title('健康チェックアプリケーション')
 st.write('BMIを計算し，あなたの健康度を割り出します')
 
 a = int(st.slider('年齢を入力してください',18,100,30))
@@ -115,8 +115,10 @@ elif h>0 and w>0:
             sh = df.loc[30]['女性身長平均']
             sw = df.loc[30]['女性体重平均']
     st.write('')
-    st.write('【プチ情報】',s,a,'歳の平均身長は',sh,'cm，平均体重は',sw,'kg')
-    #st.write()
+    if 1<= a <=25:
+        st.write('【プチ情報】',s,a,'歳の平均身長は',sh,'cm，平均体重は',sw,'kg')
+    elif a >= 26:
+        st.write('【プチ情報】',s,a,'歳代の平均身長は',sh,'cm，平均体重は',sw,'kg')
 
     if result == 1:
         st.write('炭水化物をしっかりとっていきましょう。')
@@ -154,7 +156,7 @@ elif h>0 and w>0:
         time.sleep(0.5)
 
         st.subheader('ダイエット計画表の作成')
-        for i in range(priod-1):
+        for i in range(priod):
             sum_w = int(sum_w - diff_w)
             change_w.append(sum_w)
         st.dataframe(change_w)
