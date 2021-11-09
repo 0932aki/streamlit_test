@@ -118,7 +118,7 @@ elif h>0 and w>0:
     if 1<= a <=25:
         st.write('【プチ情報】',s,a,'歳の平均身長は',sh,'cm，平均体重は',sw,'kg')
     elif a >= 26:
-        st.write('【プチ情報】',s,a,'歳代の平均身長は',sh,'cm，平均体重は',sw,'kg')
+        st.write('【プチ情報】',s,int((a/10)*10),'歳代の平均身長は',sh,'cm，平均体重は',sw,'kg')
 
     if result == 1:
         st.write('炭水化物をしっかりとっていきましょう。')
