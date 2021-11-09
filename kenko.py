@@ -142,6 +142,8 @@ elif h>0 and w>0:
 
     diff_w = float((w - target_w)/priod)
     change_w = [w]
+    month = ['ヶ月']
+    indexs = [0]
     sum_w = w
     button = st.button('健康計画表の自動作成')
 
@@ -159,5 +161,13 @@ elif h>0 and w>0:
         for i in range(priod):
             sum_w = float(sum_w - diff_w)
             change_w.append(sum_w)
-        st.dataframe(change_w)
-        st.line_chart(change_w)
+            month.append('ヶ月')
+            indexs.append(i+1)
+
+        df = pd.DataFrame(change_w,
+                  index=[indexs,month],
+                  columns=['kg'])
+        st.dataframe(df)     
+        df2 = pd.DataFrame(change_w,
+                  columns=['kg'])
+        st.line_chart(df2)
