@@ -126,7 +126,7 @@ elif h>0 and w>0:
     elif result == 2:
         st.write('継続して健康的な食事を続けていきましょう。')
         st.image('kenko.png')
-    elif result == 3:
+    elif result == 3 or result==4:
         st.write('野菜を中心とした低カロリーな食事に切り替えていきましょう。')
         st.image('vegetables.png')
 
