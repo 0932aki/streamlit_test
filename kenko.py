@@ -167,7 +167,7 @@ elif h>0 and w>0:
         df = pd.DataFrame(change_w,
                   index=[indexs,month],
                   columns=['kg'])
-        st.dataframe(df,width=300)     
+        st.dataframe(df,300,None)     
         df2 = pd.DataFrame(change_w,
                   columns=['kg'])
         st.line_chart(df2)
