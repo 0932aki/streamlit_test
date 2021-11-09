@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 
-st.title('健康チェックアプリケーション')
+st.title('健康チェックアプリ')
 st.write('BMIを計算し，あなたの健康度を割り出します')
 
 a = int(st.slider('年齢を入力してください',18,100,30))
@@ -157,7 +157,7 @@ elif h>0 and w>0:
 
         st.subheader('ダイエット計画表の作成')
         for i in range(priod):
-            sum_w = int(sum_w - diff_w)
+            sum_w = float(sum_w - diff_w)
             change_w.append(sum_w)
         st.dataframe(change_w)
         st.line_chart(change_w)
